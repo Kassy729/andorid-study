@@ -13,4 +13,11 @@
         android:layout_height="wrap_content"
         android:text="고기"
         android:onClick="onCheckboxClicked"/>
+
+    <CheckBox
+        android:id="@+id/checkbox_cheese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="치즈"
+        android:onClick="onCheckboxClicked"/>
 </LinearLayout>

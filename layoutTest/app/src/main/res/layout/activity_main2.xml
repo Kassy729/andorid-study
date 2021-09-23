@@ -5,55 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity2">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_weight="1">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="버튼1"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="버튼2"/>
-    </LinearLayout>
+    tools:context=".MainActivity4">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_weight="1">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="버튼3"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="버튼4"/>
-    </LinearLayout>
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:text="버튼1"
+        android:layout_gravity="center|top"
+        android:gravity="top|right"
+        android:backgroundTint="@color/purple_200"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_weight="1">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="버튼5"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="버튼6"/>
-    </LinearLayout>
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:text="버튼1"
+        android:layout_gravity="left"
+        android:gravity="left|center"
+        android:backgroundTint="@color/purple_200"/>
 
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:text="버튼1"
+        android:layout_gravity="right"
+        android:gravity="right|bottom"
+        android:backgroundTint="@color/purple_200"/>
 
 
 

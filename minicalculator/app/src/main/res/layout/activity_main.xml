@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="5dp">
+    <TableRow>
+        <EditText
+            android:id="@+id/edit1"
+            android:layout_span="5"
+            android:hint="숫자1 입력"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"/>
+    </TableRow>
+
+    <TableRow>
+        <EditText
+            android:id="@+id/edit2"
+            android:layout_span="5"
+            android:hint="숫자2 입력"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginBottom="10dp">
+        <Button
+            android:text="0"
+            android:id="@+id/btnNum0"
+            android:layout_weight="1"/>
+        <Button
+            android:text="1"
+            android:id="@+id/btnNum1"
+            android:layout_weight="1"/>
+        <Button
+            android:text="2"
+            android:id="@+id/btnNum2"
+            android:layout_weight="1"/>
+        <Button
+            android:text="3"
+            android:id="@+id/btnNum3"
+            android:layout_weight="1"/>
+        <Button
+            android:text="4"
+            android:id="@+id/btnNum4"
+            android:layout_weight="1"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginBottom="10dp">
+        <Button
+            android:text="5"
+            android:id="@+id/btnNum5"
+            android:layout_weight="1"/>
+        <Button
+            android:text="6"
+            android:id="@+id/btnNum6"
+            android:layout_weight="1"/>
+        <Button
+            android:text="7"
+            android:id="@+id/btnNum7"
+            android:layout_weight="1"/>
+        <Button
+            android:text="8"
+            android:id="@+id/btnNum8"
+            android:layout_weight="1"/>
+        <Button
+            android:text="9"
+            android:id="@+id/btnNum9"
+            android:layout_weight="1"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginBottom="5dp">
+        <Button
+            android:id="@+id/BtnAdd"
+            android:layout_margin="5dp"
+            android:layout_span="5"
+            android:text="더하기"
+            android:layout_weight="1"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginBottom="5dp">
+        <Button
+            android:id="@+id/BtnMin"
+            android:layout_margin="5dp"
+            android:layout_span="5"
+            android:text="빼기"
+            android:layout_weight="1"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginBottom="5dp">
+        <Button
+            android:id="@+id/BtnMul"
+            android:layout_margin="5dp"
+            android:layout_span="5"
+            android:text="곱하기"
+            android:layout_weight="1"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginBottom="5dp">
+        <Button
+            android:id="@+id/BtnDiv"
+            android:layout_margin="5dp"
+            android:layout_span="5"
+            android:text="나누기"
+            android:layout_weight="1"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/TextResult"
+            android:layout_margin="5dp"
+            android:layout_span="5"
+            android:text="계산 결과 : "
+            android:textColor="#FF0000"
+            android:textSize="20dp"
+            android:layout_weight="1"/>
+    </TableRow>
+
+</TableLayout>

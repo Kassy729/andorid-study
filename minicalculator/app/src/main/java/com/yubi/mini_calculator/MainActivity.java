@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
         btnDiv = (Button)findViewById(R.id.BtnDiv);
         textResult = (TextView)findViewById(R.id.TextResult);
 
+        for (i = 0; i < numBtnIDs.length; i++){
+            numButtons[i] = (Button)findViewById(numBtnIDs[i]);
+        }
+
         btnAdd.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if (edit1.getText().toString() == null | edit2.getText().toString() == null){
-                    Toast.makeText(getApplicationContext(), "숫자를 채워 주세요", Toast.LENGTH_SHORT).show();
-                    return true;
-                }
                 num1 = edit1.getText().toString();
                 num2 = edit2.getText().toString();
                 result = Integer.parseInt(num1) + Integer.parseInt(num2);
@@ -85,9 +85,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        for (i = 0; i < numBtnIDs.length; i++){
-            numButtons[i] = (Button)findViewById(numBtnIDs[i]);
-        }
 
         for (i = 0; i < numBtnIDs.length; i++){
             final int index;

@@ -1,4 +1,4 @@
-package com.yubi.project6_1;
+package com.yubi.project6_1_study;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -91,13 +91,11 @@ public class MainActivity extends AppCompatActivity {
         calView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                selectYear=year;
-                selectMonth=month+1;
-                selectDay=dayOfMonth;
+                selectYear = year;
+                selectMonth = month + 1;
+                selectDay = dayOfMonth;
             }
         });
-
-
 
     }
 }

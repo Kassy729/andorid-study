@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton rdoCal, rdoTime;
     CalendarView calView;
     TimePicker tPicker;
-    TextView tvYear, tvMonth, tvDay, tvHour, tvMinute;
+    TextView tvYear, tvMonth, tvDay, tvHour, tvMinute, tvText;
     int selectYear, selectMonth, selectDay;
 
     @Override
@@ -28,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("시간 예약");
-
-        btnStart = (Button)findViewById(R.id.btnStart);
-        btnEnd = (Button)findViewById(R.id.btnEnd);
 
         chrono = (Chronometer)findViewById(R.id.chronometer);
 
@@ -46,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
         tvHour = (TextView)findViewById(R.id.tvHour);
         tvMinute = (TextView)findViewById(R.id.tvMin);
 
+        tvText = (TextView)findViewById(R.id.tvText);
+
+        rdoCal.setVisibility(View.INVISIBLE);
+        rdoTime.setVisibility(View.INVISIBLE);
         tPicker.setVisibility(View.INVISIBLE);
         calView.setVisibility(View.INVISIBLE);
 
@@ -65,20 +66,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnStart.setOnClickListener(new View.OnClickListener() {
+        chrono.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 chrono.setBase(SystemClock.elapsedRealtime());
                 chrono.start();
                 chrono.setTextColor(Color.RED);
+
+                rdoCal.setVisibility(View.VISIBLE);
+                rdoTime.setVisibility(View.VISIBLE);
+                tvText.setVisibility(View.INVISIBLE);
             }
         });
 
-        btnEnd.setOnClickListener(new View.OnClickListener() {
+
+        tvYear.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onLongClick(View v) {
                 chrono.stop();
                 chrono.setTextColor(Color.BLUE);
+
                 tvYear.setText(Integer.toString(selectYear));
                 tvMonth.setText(Integer.toString(selectMonth));
                 tvDay.setText(Integer.toString(selectDay));
@@ -86,8 +93,18 @@ public class MainActivity extends AppCompatActivity {
                 tvHour.setText(Integer.toString(tPicker.getCurrentHour()));
                 tvMinute.setText(Integer.toString(tPicker.getCurrentMinute()));
 
+                tvText.setVisibility(View.VISIBLE);
+
+                rdoCal.setVisibility(View.INVISIBLE);
+                rdoTime.setVisibility(View.INVISIBLE);
+                calView.setVisibility(View.INVISIBLE);
+                tPicker.setVisibility(View.INVISIBLE);
+
+
+                return false;
             }
         });
+
         calView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {

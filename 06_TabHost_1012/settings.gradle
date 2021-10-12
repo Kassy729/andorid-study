@@ -1,0 +1,2 @@
+rootProject.name = "06_TabHost_1012"
+include ':app'

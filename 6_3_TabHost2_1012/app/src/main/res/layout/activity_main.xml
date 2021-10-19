@@ -16,36 +16,24 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:id="@android:id/tabcontent">
-            <LinearLayout
+
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:id="@+id/tabSong">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/dog"/>
-            </LinearLayout>
-            <LinearLayout
+                android:id="@+id/tabDog"
+                android:src="@drawable/dog"/>
+
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:id="@+id/tabArtist">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/cat"/>
-            </LinearLayout>
-            <LinearLayout
+                android:id="@+id/tabCat"
+                android:src="@drawable/cat"/>
+
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:id="@+id/tabAlbum">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/rabbit"/>
-            </LinearLayout>
+                android:id="@+id/tabRabbit"
+                android:src="@drawable/rabbit"/>
         </FrameLayout>
         <TabWidget
             android:layout_width="match_parent"

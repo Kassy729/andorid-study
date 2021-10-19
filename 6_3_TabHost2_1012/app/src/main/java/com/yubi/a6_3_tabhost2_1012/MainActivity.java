@@ -17,18 +17,18 @@ public class MainActivity extends TabActivity {
 
         TabHost tabHost = getTabHost();
 
-        TabHost.TabSpec tabSpecSong = tabHost.newTabSpec("SONG").setIndicator("강아지");
-        tabSpecSong.setContent(R.id.tabSong);
-        tabHost.addTab(tabSpecSong);
+        TabHost.TabSpec tabSpecDog = tabHost.newTabSpec("DOG").setIndicator("강아지");
+        tabSpecDog.setContent(R.id.tabDog);
+        tabHost.addTab(tabSpecDog);
 
-        TabHost.TabSpec tabSpecArtist = tabHost.newTabSpec("ARTIST").setIndicator("야옹이");
-        tabSpecArtist.setContent(R.id.tabArtist);
-        tabHost.addTab(tabSpecArtist);
+        TabHost.TabSpec tabSpecCat = tabHost.newTabSpec("CAT").setIndicator("야옹이");
+        tabSpecCat.setContent(R.id.tabCat);
+        tabHost.addTab(tabSpecCat);
 
-        TabHost.TabSpec tabAlbum = tabHost.newTabSpec("ALBUM").setIndicator("토끼");
-        tabAlbum.setContent(R.id.tabAlbum);
-        tabHost.addTab(tabAlbum);
+        TabHost.TabSpec tabRabbit = tabHost.newTabSpec("RABBIT").setIndicator("토끼");
+        tabRabbit.setContent(R.id.tabRabbit);
+        tabHost.addTab(tabRabbit);
 
-        tabHost.setCurrentTab(2);
+        tabHost.setCurrentTab(0);
     }
 }

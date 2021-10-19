@@ -5,72 +5,42 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
+    android:layout_margin="10dp"
+    android:columnCount="4"
+    android:rowCount="2"
     tools:context=".MainActivity">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="선택을 시작하겠습니다?"
-        android:textSize="20dp"/>
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="page1"
+            android:onClick="onClicked"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="page2"
+            android:onClick="onClicked"/>
+    </LinearLayout>
 
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="false"
-        android:id="@+id/swit"/>
-
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="좋아하는 안드로이드 버전은?"
-        android:visibility="invisible"
-        android:id="@+id/text"
-        android:textSize="20dp"/>
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:id="@+id/rdoGroup">
-        <RadioButton
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="파이"
-            android:id="@+id/rdoPie"/>
-        <RadioButton
+            android:id="@+id/img_dog"
+            android:src="@drawable/dog"/>
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Q"
-            android:id="@+id/rdoQ"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="R"
-            android:id="@+id/rdoR"/>
-    </RadioGroup>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:id="@+id/img"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:text="종료"
-        android:backgroundTint="@color/black"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:text="처음으로"
-        android:backgroundTint="@color/black"/>
-
-
-
-
-
+            android:id="@+id/img_cat"
+            android:src="@drawable/cat"/>
+    </FrameLayout>
 </LinearLayout>

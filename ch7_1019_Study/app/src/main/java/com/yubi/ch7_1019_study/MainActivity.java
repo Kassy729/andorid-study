@@ -1,4 +1,4 @@
-package com.yubi.ch07_1019;
+package com.yubi.ch7_1019_study;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
     Button btn1;
     LinearLayout baseLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,13 +23,6 @@ public class MainActivity extends AppCompatActivity {
         btn1 = (Button)findViewById(R.id.btn1);
         baseLayout = (LinearLayout)findViewById(R.id.baseLayout);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                btn1.setRotation(0);
-                btn1.setScaleY(1);
-            }
-        });
     }
 
     @Override
@@ -45,16 +38,14 @@ public class MainActivity extends AppCompatActivity {
                 baseLayout.setBackgroundColor(Color.BLUE);
                 return true;
             case R.id.subRotate:
-                btn1.setRotation(45);
+                baseLayout.setRotation(45);
                 return true;
             case R.id.subSize:
-                btn1.setScaleY(2);
+                baseLayout.setScaleY(2);
                 return true;
         }
         return false;
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -6,41 +6,112 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    android:columnCount="4"
-    android:rowCount="2"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <Chronometer
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="match_parent"
+        android:background="#CCCCCC"
+        android:format="예약에 걸린 시간 : %s"
+        android:gravity="center"
+        android:id="@+id/chrono"
+        android:textSize="20dp"
+
+        android:textColor="@color/purple_700"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rdoGroup">
+        <RadioButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="page1"
-            android:onClick="onClicked"/>
-        <Button
-            android:layout_width="match_parent"
+            android:id="@+id/rdoCal"
+            android:text="날짜 설정"/>
+        <RadioButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="page2"
-            android:onClick="onClicked"/>
-    </LinearLayout>
+            android:id="@+id/rdoTime"
+            android:text="시간 설정"/>
+    </RadioGroup>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/img_dog"
-            android:src="@drawable/dog"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/img_cat"
-            android:src="@drawable/cat"/>
+        <CalendarView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/cal"/>
+        <TimePicker
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:timePickerMode="spinner"
+            android:id="@+id/time"/>
     </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CCCCCC"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textYear"
+            android:textSize="20dp"
+            android:text="0000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="년"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:id="@+id/textMonth"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="월"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:id="@+id/textDay"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="일"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:id="@+id/textHour"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="시"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:id="@+id/textMinute"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="분"/>
+    </LinearLayout>
 </LinearLayout>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,7 +14,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
-    Button btn1;
+    Button btn1, btn2;
     LinearLayout baseLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,19 +22,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btn1 = (Button)findViewById(R.id.btn1);
+        btn2 = (Button)findViewById(R.id.btn2);
         baseLayout = (LinearLayout)findViewById(R.id.baseLayout);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                btn1.setRotation(0);
-                btn1.setScaleY(1);
-            }
-        });
+        registerForContextMenu(btn1);
+        registerForContextMenu(btn2);
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        MenuInflater mInflater = getMenuInflater();
+        if(v == btn1){
+            menu.setHeaderTitle("배경색 변경");
+
+            mInflater.inflate(R.menu.menu, menu);
+        }
+        if (v == btn2){
+            mInflater.inflate(R.menu.menu2, menu);
+        }
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        super.onContextItemSelected(item);
         switch (item.getItemId()){
             case R.id.itemRed:
                 baseLayout.setBackgroundColor(Color.RED);
@@ -45,21 +58,12 @@ public class MainActivity extends AppCompatActivity {
                 baseLayout.setBackgroundColor(Color.BLUE);
                 return true;
             case R.id.subRotate:
-                btn1.setRotation(45);
+                btn2.setRotation(45);
                 return true;
             case R.id.subSize:
-                btn1.setScaleY(2);
+                btn2.setScaleY(2);
                 return true;
         }
         return false;
-    }
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater mInflater = getMenuInflater();
-        mInflater.inflate(R.menu.menu, menu);
-        return true;
     }
 }

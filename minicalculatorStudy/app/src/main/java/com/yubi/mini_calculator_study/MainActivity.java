@@ -83,19 +83,16 @@ public class MainActivity extends AppCompatActivity {
         for(int i=0; i<btnIds.length; i++){
             final int index;
             index = i;
-
             btnNum[index].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(edt1.isFocused() == true){
-                        num1 = edt1.getText().toString() + btnNum[index].getText().toString();
-                        edt1.setText(num1);
-                    }else if(edt2.isFocused() == true){
-                        num2 = edt2.getText().toString() + btnNum[index].getText().toString();
-                        edt2.setText(num2);
-                    }else{
+                    if(edt1.isFocused() == false || edt2.isFocused() == false){
                         Toast.makeText(getApplicationContext(), "먼저 에디트를 지정해주세요", Toast.LENGTH_SHORT).show();
-                        return;
+                    }else{
+                        num1 = edt1.getText().toString() + btnNum[index].getText().toString();
+                        num2 = edt2.getText().toString() + btnNum[index].getText().toString();
+                        edt1.setText(num1);
+                        edt2.setText(num2);
                     }
                 }
             });

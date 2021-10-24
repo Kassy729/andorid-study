@@ -2,116 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:orientation="vertical"
     tools:context=".MainActivity">
-
-    <Chronometer
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#CCCCCC"
-        android:format="예약에 걸린 시간 : %s"
-        android:gravity="center"
-        android:id="@+id/chrono"
-        android:textSize="20dp"
-
-        android:textColor="@color/purple_700"/>
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rdoGroup">
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/rdoCal"
-            android:text="날짜 설정"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/rdoTime"
-            android:text="시간 설정"/>
-    </RadioGroup>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-        <CalendarView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/cal"/>
-        <TimePicker
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:timePickerMode="spinner"
-            android:id="@+id/time"/>
-    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#CCCCCC"
-        android:gravity="center"
         android:orientation="horizontal">
-        <TextView
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="URL을 입력하세요"/>
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textYear"
-            android:textSize="20dp"
-            android:text="0000"/>
-        <TextView
+            android:text="이동"
+            android:id="@+id/btnNext"/>
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="년"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:id="@+id/textMonth"
-            android:text="00"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="월"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:id="@+id/textDay"
-            android:text="00"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="일"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:id="@+id/textHour"
-            android:text="00"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="시"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:id="@+id/textMinute"
-            android:text="00"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="분"/>
+            android:text="이전"
+            android:id="@+id/btnBack"/>
     </LinearLayout>
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"/>
 </LinearLayout>

@@ -39,6 +39,20 @@ public class MainActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TabHost tabHost = getTabHost();
 
+        TabHost.TabSpec tabDog = tabHost.newTabSpec("Dog").setIndicator("강아지");
+        tabDog.setContent(R.id.tabDog);
+        tabHost.addTab(tabDog);
+
+        TabHost.TabSpec tabSpecCat = tabHost.newTabSpec("cat").setIndicator("고양이");
+        tabSpecCat.setContent(R.id.tabCat);
+        tabHost.addTab(tabSpecCat);
+
+        TabHost.TabSpec tabSpecRabbit = tabHost.newTabSpec("rabbit").setIndicator("토끼");
+        tabSpecRabbit.setContent(R.id.tabRabbit);
+        tabHost.addTab(tabSpecRabbit);
+
+        tabHost.setCurrentTab(0);
     }
 }

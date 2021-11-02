@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Baseapp3</string>
-    <string name="btn_yju">학교 홈페이지</string>
-    <string name="btn_call">전화 걸기</string>
-    <string name="btn_gal">갤러리 열기</string>
-    <string name="btn_end">끝내</string>
-</resources>

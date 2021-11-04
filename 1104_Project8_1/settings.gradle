@@ -1,0 +1,2 @@
+rootProject.name = "1104_Project8_1"
+include ':app'

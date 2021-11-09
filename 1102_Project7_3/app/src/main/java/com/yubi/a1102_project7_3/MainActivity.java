@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     EditText dlgEdtName, dlgEdtEmail;
     TextView toastText;
     View dialogView, toastView;
+    String[]versionArray = {"1", "2", "3"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

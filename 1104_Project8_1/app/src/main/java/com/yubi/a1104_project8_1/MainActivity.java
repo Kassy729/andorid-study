@@ -36,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
         int cMonth = cal.get(Calendar.MONTH);
         int cDay = cal.get(Calendar.DAY_OF_MONTH);
 
+        String fileName2 = Integer.toString(cYear) + "_" + Integer.toString(cMonth + 1) + "_" + Integer.toString(cDay) + ".txt";
+        String str2 = readDiary(fileName2);
+        edtDiary.setText(str2);
+        btnWrite.setEnabled(true);
+
+
         dp.init(cYear, cMonth, cDay, new DatePicker.OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -54,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     FileOutputStream outFs = openFileOutput(fileName, Context.MODE_PRIVATE);
                     String str = edtDiary.getText().toString();
                     outFs.write(str.getBytes());
+                    outFs.close();
                     Toast.makeText(getApplicationContext(), fileName + "이 저장됨", Toast.LENGTH_SHORT).show();
                 }catch (IOException e){
 

@@ -6,22 +6,24 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".secondActivity">
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="아이디를 입력하세요"
-        android:id="@+id/edtId"/>
-    <EditText
+        android:hint="아이디"
+        android:textSize="30dp"
+        android:id="@+id/tvId"/>
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="비밀번호를 입력하세요"
-        android:id="@+id/editPassword"/>
+        android:hint="비밀번호"
+        android:textSize="30dp"
+        android:id="@+id/tvPassword"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="입력하기"
-        android:id="@+id/btnInput"/>
+        android:text="되돌아가기"
+        android:id="@+id/btnReturn"/>
 
 </LinearLayout>

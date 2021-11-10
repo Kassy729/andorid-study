@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dialogView = (View)View.inflate(MainActivity.this, R.layout.dialog1, null);
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
-                dlg.setTitle("사용자 정보 입력");
-                dlg.setIcon(R.drawable.ic_menu_allfriends);
+                dlg.setTitle("dd");
                 dlg.setView(dialogView);
                 dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                     @Override

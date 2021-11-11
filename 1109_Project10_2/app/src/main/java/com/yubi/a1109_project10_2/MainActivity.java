@@ -34,9 +34,30 @@ public class MainActivity extends AppCompatActivity  {
 
         //★ 입력하기 예제10-11 메인 액티비티(MainActivity.java)의 코드 2 입력
 
-
+        for(int i=0; i<imageId.length; i++){
+            final int index;
+            index = i;
+            image[index] = (ImageView)findViewById(imageId[index]);
+            image[index].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    voteCount[index]++;
+                    Toast.makeText(getApplicationContext(), imgName[index] + ": 총" + voteCount[index] + "표", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
 
         //★ 입력하기  예제10-12 메인 액티비티(MainActivity.java)의 코드 3 입력
 
+        Button btnFinish = (Button)findViewById(R.id.btnResult);
+        btnFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                intent.putExtra("VoteCount", voteCount);
+                intent.putExtra("ImageName", imgName);
+                startActivity(intent);
+            }
+        });
     }
 }
